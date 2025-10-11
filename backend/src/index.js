@@ -5,15 +5,21 @@ import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
 import registrationRoutes from './routes/registrationRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
+import mongoose from 'mongoose';
 
 dotenv.config();
 const app = express();
+
+process.on('unhandledRejection', (err) => console.error('UnhandledRejection:', err));
+process.on('uncaughtException', (err) => console.error('UncaughtException:', err));
 
 app.use(cors({ origin: process.env.CORS_ORIGIN || '*', credentials: true }));
 app.use(express.json());
 app.use(morgan('dev'));
 
-app.get('/api/health', (_req, res) => res.json({ ok: true }));
+app.get('/api/health', (_req, res) => {
+  res.json({ ok: true, dbState: mongoose.connection.readyState });
+});
 
 app.use('/api/registrations', registrationRoutes);
 app.use('/api/admin', adminRoutes);

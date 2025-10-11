@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
-    "seed:admin": "node src/scripts/createAdmin.js"
+    "seed:admin": "node src/scripts/createAdmin.js",
+    "seed:admin:reset": "node src/scripts/resetAdmin.js",
+    "check:admin": "node src/scripts/checkAdmin.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
