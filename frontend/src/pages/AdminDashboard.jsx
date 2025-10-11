@@ -38,29 +38,45 @@ export default function AdminDashboard(){
   }
 
   return (
-    <div className="card">
-      <h2 style={{marginTop:0}}>Admin Dashboard</h2>
-      {error && <div style={{color:'crimson'}}>{error}</div>}
-      <div style={{display:'flex', gap:8, marginBottom:12}}>
-        <button onClick={load}>Refresh</button>
-        <button onClick={exportCsv}>Export CSV</button>
+    <div className="bg-cream border-2 border-gold rounded-lg p-5 shadow-[0_4px_0_#740001]">
+      <h2 className="mt-0">Admin Dashboard</h2>
+      {error && <div className="text-red-600">{error}</div>}
+      <div className="flex gap-2 mb-3">
+        <button
+          className="bg-gold text-ink border-2 border-maroon py-2.5 px-4 rounded-md font-bold hover:brightness-95"
+          onClick={load}
+        >
+          Refresh
+        </button>
+        <button
+          className="bg-gold text-ink border-2 border-maroon py-2.5 px-4 rounded-md font-bold hover:brightness-95"
+          onClick={exportCsv}
+        >
+          Export CSV
+        </button>
       </div>
-      <div style={{overflowX:'auto'}}>
-        <table className="table">
+      <div className="overflow-x-auto">
+        <table className="w-full table-auto border-collapse">
           <thead>
             <tr>
-              <th>Name</th><th>Email</th><th>Phone</th><th>House</th><th>Ticket</th><th>Created</th>
+              {['Name','Email','Phone','House','Ticket','Created'].map(h=>(
+                <th key={h} className="border border-maroon p-2 bg-thbg font-semibold">{h}</th>
+              ))}
             </tr>
           </thead>
           <tbody>
             {rows.map(r=>(
               <tr key={r._id}>
-                <td>{r.fullName}</td>
-                <td>{r.email}</td>
-                <td>{r.phone || '-'}</td>
-                <td><span className="badge">{r.house}</span></td>
-                <td>{r.ticketType}</td>
-                <td>{new Date(r.createdAt).toLocaleString()}</td>
+                <td className="border border-maroon p-2">{r.fullName}</td>
+                <td className="border border-maroon p-2">{r.email}</td>
+                <td className="border border-maroon p-2">{r.phone || '-'}</td>
+                <td className="border border-maroon p-2">
+                  <span className="inline-block px-2 py-0.5 rounded-full bg-green text-white text-xs">
+                    {r.house}
+                  </span>
+                </td>
+                <td className="border border-maroon p-2">{r.ticketType}</td>
+                <td className="border border-maroon p-2">{new Date(r.createdAt).toLocaleString()}</td>
               </tr>
             ))}
           </tbody>

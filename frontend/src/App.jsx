@@ -9,9 +9,9 @@ import Navbar from './components/Navbar.jsx';
 
 export default function App() {
   return (
-    <div className="app">
+    <div className="min-h-screen">
       <Navbar />
-      <main className="container">
+      <main className="max-w-[900px] mx-auto my-6 px-4">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
