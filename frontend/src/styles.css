@@ -1,0 +1,89 @@
+:root{
+  --maroon:#740001;
+  --gold:#D3A625;
+  --green:#1A472A;
+  --parchment:#F8F4E3;
+  --ink:#0E0B00;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+.navbar{
+  background: linear-gradient(90deg, var(--maroon), #2a0b0b);
+  color: var(--gold);
+  padding: 12px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.brand{
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.navbar a{
+  color: var(--gold);
+  text-decoration:none;
+  margin-left:16px;
+}
+
+.container{
+  max-width:900px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.card{
+  background: #fffdf6;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 0 var(--maroon);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+button, .btn{
+  background: var(--gold);
+  color: var(--ink);
+  border: 2px solid var(--maroon);
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor:pointer;
+  font-weight:700;
+}
+button:hover{ filter:brightness(0.95); }
+
+input, select, textarea{
+  width:100%;
+  padding:10px;
+  margin:8px 0 16px;
+  border: 1px solid var(--maroon);
+  border-radius:6px;
+  background:#fffdfa;
+}
+
+.table{
+  width:100%;
+  border-collapse: collapse;
+}
+.table th, .table td{
+  border:1px solid var(--maroon);
+  padding:8px;
+}
+.table th{
+  background: #efe4c6;
+}
+.badge{
+  display:inline-block;
+  padding:2px 8px;
+  border-radius:999px;
+  background:var(--green);
+  color:#fff;
+  font-size:12px;
+}
