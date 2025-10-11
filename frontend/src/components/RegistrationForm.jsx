@@ -94,7 +94,7 @@ export default function RegistrationForm(){
       />
 
       <button
-        className="bg-gold text-ink border-2 border-maroon py-2.5 px-4 rounded-md font-bold hover:brightness-95 disabled:opacity-60"
+        className="bg-gold text-ink border-2 border-maroon py-2.5 px-4 rounded-md font-bold transition hover:brightness-95 disabled:opacity-60"
         disabled={loading}
       >
         {loading ? 'Submitting...' : 'Submit'}
