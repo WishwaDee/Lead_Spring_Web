@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --color-maroon: #740001;
+  --color-maroon-dark: #2a0b0b;
+  --color-gold: #D3A625;
+  --color-green: #1A472A;
+  --color-parchment: #F8F4E3;
+  --color-ink: #0E0B00;
+  --color-cream: #fffdf6;
+  --color-paper: #fffdfa;
+  --color-thbg: #efe4c6;
+}
+
 @layer base {
   body {
     @apply m-0 bg-parchment text-ink font-serif;

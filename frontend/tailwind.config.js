@@ -5,7 +5,7 @@ export default {
     extend: {
       colors: {
         maroon: '#740001',
-        maroonDark: '#2a0b0b',
+        'maroon-dark': '#2a0b0b',
         gold: '#D3A625',
         green: '#1A472A',
         parchment: '#F8F4E3',
