@@ -8,8 +8,8 @@ dotenv.config();
 (async () => {
   try {
     await connectDB();
-    const username = process.env.ADMIN_USERNAME || 'admin';
-    const password = process.env.ADMIN_PASSWORD || 'Admin!2345#Wizard';
+    const username = (process.env.ADMIN_USERNAME || 'admin').trim().toLowerCase();
+    const password = process.env.ADMIN_PASSWORD || 'change-me';
     const admin = await Admin.findOne({ username });
     if (!admin) {
       console.log('Admin not found for username:', username);

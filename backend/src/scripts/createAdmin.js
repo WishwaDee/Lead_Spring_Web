@@ -8,7 +8,7 @@ dotenv.config();
 (async () => {
   try {
     await connectDB();
-    const username = process.env.ADMIN_USERNAME || 'admin';
+    const username = (process.env.ADMIN_USERNAME || 'admin').trim().toLowerCase();
     const password = process.env.ADMIN_PASSWORD || 'change-me';
     const existing = await Admin.findOne({ username });
     if (existing) {
