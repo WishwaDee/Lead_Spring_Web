@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables used across components */
+:root{
+  --maroon: #740001;
+  --maroon-dark: #2a0b0b;
+  --gold: #D3A625;
+  --green: #1A472A;
+  --parchment: #F8F4E3;
+  --ink: #0E0B00;
+  --cream: #fffdf6;
+  --paper: #fffdfa;
+  --thbg: #efe4c6;
+}
+
+/* small helpers so legacy classes still work */
+.bg-parchment { background-color: var(--parchment); }
+.text-ink { color: var(--ink); }
+.bg-cream { background-color: var(--cream); }
+.bg-paper { background-color: var(--paper); }
+.text-maroon { color: var(--maroon); }
+.border-gold { border-color: var(--gold); }
+.text-gold { color: var(--gold); }
+.bg-gold { background-color: var(--gold); }
+.bg-thbg { background-color: var(--thbg); }
