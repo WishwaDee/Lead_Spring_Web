@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import goldLogo from '../assets/lead-spring-logo.svg';
+import goldLogo from '../assets/lead_spring_logo.png';
 
 const registerUrl = '#';
 
