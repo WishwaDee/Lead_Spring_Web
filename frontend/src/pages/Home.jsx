@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import goldLogo from '../assets/lead_spring_logo.png';
+import goldLogo from '../assets/LeadSpring_logo.png';
+import ieeeLogo from '../assets/IEEE_.png';
+import iasLogo from '../assets/IAS.png';
+import pesLogo from '../assets/PES_White.png';
 
 const registerUrl = '#';
 
@@ -189,19 +192,22 @@ export default function Home() {
 
         {/* Footer Logos */}
         <section className="fade-in-up border-t border-amber-500/30 pt-16" style={{ animationDelay: '1.4s' }}>
-          <div className="flex flex-wrap items-center justify-center gap-12 text-white/80 hover:text-white transition-colors">
-            <div className="text-center space-y-1">
-              <div className="text-xl font-bold tracking-wide">SLIIT</div>
-              <div className="text-sm uppercase tracking-[0.3em] text-white/60">IEEE Student Branch</div>
-            </div>
-            <div className="text-center space-y-1">
-              <div className="text-xl font-bold tracking-wide">IEEE IAS</div>
-              <div className="text-xs uppercase tracking-[0.3em] text-white/60">Industry Applications Society</div>
-            </div>
-            <div className="text-center space-y-1">
-              <div className="text-xl font-bold tracking-wide">IEEE PES</div>
-              <div className="text-xs uppercase tracking-[0.3em] text-white/60">Power & Energy Society</div>
-            </div>
+          <div className="flex flex-wrap items-center justify-center gap-12">
+            <img
+              src={ieeeLogo}
+              alt="SLIIT IEEE Student Branch logo"
+              className="h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.45)]"
+            />
+            <img
+              src={iasLogo}
+              alt="IEEE IAS logo"
+              className="h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.45)]"
+            />
+            <img
+              src={pesLogo}
+              alt="IEEE PES logo"
+              className="h-16 w-auto object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.45)]"
+            />
           </div>
         </section>
       </div>
