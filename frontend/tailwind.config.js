@@ -4,15 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        maroon: '#740001',
-        'maroon-dark': '#2a0b0b',
-        gold: '#D3A625',
-        green: '#1A472A',
-        parchment: '#F8F4E3',
-        ink: '#0E0B00',
-        cream: '#fffdf6',
-        paper: '#fffdfa',
-        thbg: '#efe4c6'
+        midnight: '#050413',
+        twilight: '#1a0f2f',
+        forest: '#071c1f',
+        ember: '#f4c95d',
+        'ember-dark': '#d6a43d',
+        mist: '#f3edff',
+        plume: '#b8a7ff'
       }
     }
   },
