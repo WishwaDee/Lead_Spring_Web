@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import goldLogo from '../assets/lead-spring-logo.svg';
 
 const registerUrl = '#';
 
@@ -98,47 +99,13 @@ export default function Home() {
             transform: `perspective(1000px) rotateX(${mousePosition.y * 0.05}deg) rotateY(${mousePosition.x * 0.05}deg)`
           }}
         >
-          {/* Magical Castle Logo */}
-          <div className="flex justify-center float" style={{ animationDelay: '0s' }}>
-            <svg className="h-40 w-auto drop-shadow-[0_0_20px_rgba(244,201,93,0.6)]" viewBox="0 0 400 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor: '#F4C95D', stopOpacity: 1}} />
-                  <stop offset="50%" style={{stopColor: '#FFD700', stopOpacity: 1}} />
-                  <stop offset="100%" style={{stopColor: '#F4C95D', stopOpacity: 1}} />
-                </linearGradient>
-              </defs>
-              
-              {/* Castle */}
-              <path d="M200 20 L190 35 L180 30 L170 40 L175 45 L165 50 L170 60 L180 55 L185 70 L195 65 L200 80 L205 65 L215 70 L220 55 L230 60 L235 50 L225 45 L230 40 L220 30 L210 35 Z" 
-                    fill="none" stroke="url(#goldGrad)" strokeWidth="2" strokeLinejoin="round" className="shimmer"/>
-              <path d="M185 70 L185 85 L215 85 L215 70" fill="none" stroke="url(#goldGrad)" strokeWidth="2"/>
-              <circle cx="190" cy="77" r="2" fill="url(#goldGrad)"/>
-              <circle cx="200" cy="77" r="2" fill="url(#goldGrad)"/>
-              <circle cx="210" cy="77" r="2" fill="url(#goldGrad)"/>
-              
-              {/* Sparkles */}
-              <circle cx="160" cy="40" r="3" fill="url(#goldGrad)" opacity="0.7" className="twinkle" style={{animationDelay: '0s'}}/>
-              <circle cx="240" cy="50" r="2" fill="url(#goldGrad)" opacity="0.7" className="twinkle" style={{animationDelay: '0.5s'}}/>
-              <circle cx="200" cy="10" r="2.5" fill="url(#goldGrad)" opacity="0.7" className="twinkle" style={{animationDelay: '1s'}}/>
-              
-              {/* Decorative lines */}
-              <path d="M150 90 Q175 95 200 90 Q225 85 250 90" stroke="url(#goldGrad)" strokeWidth="1.5" fill="none" opacity="0.6"/>
-            </svg>
-          </div>
-
-          {/* Main Title with Glow */}
-          <div className="fade-in-up space-y-4" style={{ animationDelay: '0.2s' }}>
-            <h1 className="font-serif text-8xl font-bold tracking-wider glow gradient-text">
-              LEAD SPRING
-            </h1>
-            <div className="flex items-center justify-center gap-3 text-base tracking-[0.3em]" style={{color: '#F4C95D'}}>
-              <span className="opacity-80">LEAD</span>
-              <span className="text-2xl">✦</span>
-              <span className="opacity-80">LEARN</span>
-              <span className="text-2xl">✦</span>
-              <span className="opacity-80">GROW</span>
-            </div>
+          {/* Gold Logo */}
+          <div className="flex justify-center fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <img
+              src={goldLogo}
+              alt="Lead Spring gold logo"
+              className="h-auto w-full max-w-2xl drop-shadow-[0_0_35px_rgba(244,201,93,0.45)]"
+            />
           </div>
 
           {/* Subtitle */}
@@ -222,18 +189,18 @@ export default function Home() {
 
         {/* Footer Logos */}
         <section className="fade-in-up border-t border-amber-500/30 pt-16" style={{ animationDelay: '1.4s' }}>
-          <div className="flex flex-wrap items-center justify-center gap-12 opacity-60 hover:opacity-80 transition-opacity">
-            <div className="text-center">
-              <div className="text-xl font-bold text-amber-300">SLIIT</div>
-              <div className="text-sm text-slate-300">IEEE Student Branch</div>
+          <div className="flex flex-wrap items-center justify-center gap-12 text-white/80 hover:text-white transition-colors">
+            <div className="text-center space-y-1">
+              <div className="text-xl font-bold tracking-wide">SLIIT</div>
+              <div className="text-sm uppercase tracking-[0.3em] text-white/60">IEEE Student Branch</div>
             </div>
-            <div className="text-center">
-              <div className="text-xl font-bold text-amber-300">IEEE IAS</div>
-              <div className="text-xs text-slate-400">Industry Applications Society</div>
+            <div className="text-center space-y-1">
+              <div className="text-xl font-bold tracking-wide">IEEE IAS</div>
+              <div className="text-xs uppercase tracking-[0.3em] text-white/60">Industry Applications Society</div>
             </div>
-            <div className="text-center">
-              <div className="text-xl font-bold text-amber-300">IEEE PES</div>
-              <div className="text-xs text-slate-400">Power & Energy Society</div>
+            <div className="text-center space-y-1">
+              <div className="text-xl font-bold tracking-wide">IEEE PES</div>
+              <div className="text-xs uppercase tracking-[0.3em] text-white/60">Power & Energy Society</div>
             </div>
           </div>
         </section>
