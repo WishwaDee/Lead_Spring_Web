@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  font-family: 'EB Garamond', serif;
+  background-color: #f8f4e3;
+  color: #0e0b00;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #f8f4e3;
+  color: #0e0b00;
+}
+
+* {
+  box-sizing: border-box;
+}
