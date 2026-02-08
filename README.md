@@ -1,30 +1,53 @@
-# Wizarding Event Landing Page
+# Wizarding Event Registration (MERN)
 
-This project is now a single-page React landing site with Harry Potter-inspired styling. It keeps the whimsical
-theme while removing all backend code, admin flows, and API dependencies.
+This is a minimal MERN application with Harry Potter-inspired colors (no copyrighted assets).
 
-## Features
-- Hero section with a prominent “Register Now” button that you can point to a Google Form.
-- Scrollable sections for event details and schedule.
-- Lightweight static build powered by Vite.
+- Public registration form
+- Admin login + dashboard to view/export registrations (CSV)
 
-## Configuration
-- Optionally set `VITE_REGISTER_URL` in `frontend/.env` to control where the register button points.
-  ```bash
-  VITE_REGISTER_URL=https://docs.google.com/forms/d/your-form-id
-  ```
-  If not provided, the button will default to `#` so you can wire it up later.
+Folders:
+- `backend/` — Express, MongoDB, JWT auth, CSV export
+- `frontend/` — React (Vite), Router, Axios
 
-## Getting Started
-```bash
+## Prerequisites
+- Node.js 18+
+- MongoDB running locally (or provide a URI)
+
+## Setup (Windows PowerShell)
+
+### Backend
+1. Copy env file
+```powershell
+Copy-Item backend/.env.example backend/.env
+```
+2. Edit `backend/.env` and set `MONGO_URI` and `JWT_SECRET`.
+3. Install and seed admin, then run dev server
+```powershell
+cd backend
+npm install
+npm run seed:admin
+npm run dev
+```
+The API runs at http://localhost:4000/api
+
+### Frontend
+1. Create `frontend/.env` with API URL
+```powershell
+Set-Content -Path frontend/.env -Value "VITE_API_URL=http://localhost:4000/api"
+```
+2. Install and start
+```powershell
 cd frontend
 npm install
 npm run dev
 ```
+Open http://localhost:5173
 
-The development server runs at http://localhost:5173. For production, run `npm run build` to generate a static `dist/`
-folder you can deploy to any static host.
+## Admin
+- Login page: http://localhost:5173/admin/login
+- Use credentials from `backend/.env` (created by seed script)
+- After login, visit http://localhost:5173/admin to see registrations and export CSV
 
 ## Notes
 - Theme uses generic “Wizarding” wording and house color vibe; no copyrighted logos or assets are included.
-- Since the backend has been removed, the repository now contains only the `frontend/` React application.
+- To deploy, host `frontend` as a static site and deploy `backend` to your preferred Node host with the same `VITE_API_URL`.
