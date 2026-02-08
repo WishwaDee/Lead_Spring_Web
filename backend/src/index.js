@@ -11,7 +11,10 @@ dotenv.config();
 const app = express();
 
 process.on('unhandledRejection', (err) => console.error('UnhandledRejection:', err));
-process.on('uncaughtException', (err) => console.error('UncaughtException:', err));
+process.on('uncaughtException', (err) => {
+  console.error('UncaughtException:', err);
+  process.exit(1);
+});
 
 app.use(cors({ origin: process.env.CORS_ORIGIN || '*', credentials: true }));
 app.use(express.json());
